@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://csdlgwjm757yl"
+=======
 uid="uid://buu2b30wpp8s4"
+>>>>>>> main
 path="res://.godot/imported/Character light atk.png-8d1509a715a87ca0925ca9e375be0b96.ctex"
 metadata={
 "vram_texture": false
