@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://dguxuo72x1gm6"
+=======
+uid="uid://0j6vcf1we8pd"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Death-Sheet.png-3a0c6cc3cc628961a9f94b787e734f0a.ctex"
 metadata={
 "vram_texture": false
