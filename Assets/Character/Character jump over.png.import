@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dc6h8dg66dyoq"
+=======
+uid="uid://brmm8u8kdedxj"
+>>>>>>> main
 path="res://.godot/imported/Character jump over.png-1cc63adc8258eafbeed868b7bb7f1079.ctex"
 metadata={
 "vram_texture": false

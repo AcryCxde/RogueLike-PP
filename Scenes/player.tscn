@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d3278y2ln24il"]
+
+[node name="Player" type="Node2D"]
+
+[node name="AnimatedPlayerSprite" type="AnimatedSprite2D" parent="."]
