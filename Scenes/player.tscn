@@ -274,11 +274,6 @@ animations = [{
 "loop": true,
 "name": &"jump",
 "speed": 15.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -288,7 +283,7 @@ script = ExtResource("1_nc8a0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -65)
 sprite_frames = SubResource("SpriteFrames_ywxcn")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
