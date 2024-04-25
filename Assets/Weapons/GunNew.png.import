@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lxq3bkqmtrln"
-path="res://.godot/imported/Character Jump.png-29919ac0bc01063203990cc32b8159b9.ctex"
+uid="uid://df3ton15nfd66"
+path="res://.godot/imported/GunNew.png-01d3856c5fccd4cee48a51e736ca407d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/Character Jump.png"
-dest_files=["res://.godot/imported/Character Jump.png-29919ac0bc01063203990cc32b8159b9.ctex"]
+source_file="res://Assets/Weapons/GunNew.png"
+dest_files=["res://.godot/imported/GunNew.png-01d3856c5fccd4cee48a51e736ca407d.ctex"]
 
 [params]
 
