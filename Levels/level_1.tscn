@@ -13650,6 +13650,49 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_p3tnd")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph1c7"]
+atlas = ExtResource("4_sjw4a")
+region = Rect2(0, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rij67"]
+atlas = ExtResource("4_sjw4a")
+region = Rect2(122, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7v73"]
+atlas = ExtResource("4_sjw4a")
+region = Rect2(244, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cykl1"]
+atlas = ExtResource("4_sjw4a")
+region = Rect2(366, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y5dk"]
+atlas = ExtResource("4_sjw4a")
+region = Rect2(488, 0, 122, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e4axy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph1c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rij67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7v73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cykl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y5dk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fekda"]
 atlas = ExtResource("3_h60yx")
 region = Rect2(0, 0, 140, 140)
@@ -13774,50 +13817,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 20.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ph1c7"]
-atlas = ExtResource("4_sjw4a")
-region = Rect2(0, 0, 122, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rij67"]
-atlas = ExtResource("4_sjw4a")
-region = Rect2(122, 0, 122, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7v73"]
-atlas = ExtResource("4_sjw4a")
-region = Rect2(244, 0, 122, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cykl1"]
-atlas = ExtResource("4_sjw4a")
-region = Rect2(366, 0, 122, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2y5dk"]
-atlas = ExtResource("4_sjw4a")
-region = Rect2(488, 0, 122, 60)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_e4axy"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ph1c7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rij67")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d7v73")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cykl1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2y5dk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 12.0
+"speed": 18.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bqwt"]
@@ -13874,7 +13874,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 20.0
+"speed": 18.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhmoi"]
@@ -14234,37 +14234,31 @@ layer_0/tile_data = PackedInt32Array(65537, 0, 1, 65538, 65536, 1, 131074, 65536
 [node name="Player" parent="." instance=ExtResource("1_gc5se")]
 position = Vector2(161, 292)
 
-[node name="удалить, Бег" type="AnimatedSprite2D" parent="."]
-position = Vector2(48, 1408)
-sprite_frames = SubResource("SpriteFrames_uej30")
-frame = 1
-frame_progress = 0.298096
-
 [node name="удалить, пушка" type="AnimatedSprite2D" parent="."]
-position = Vector2(86, 1512)
+position = Vector2(822, 1470)
 sprite_frames = SubResource("SpriteFrames_e4axy")
-frame = 3
-frame_progress = 0.151209
+frame_progress = 0.487564
+
+[node name="удалить, Бег" type="AnimatedSprite2D" parent="."]
+position = Vector2(110, 1425)
+sprite_frames = SubResource("SpriteFrames_uej30")
+frame = 15
+frame_progress = 0.469473
 
 [node name="удалить, хит" type="AnimatedSprite2D" parent="."]
 position = Vector2(209, 1410)
 sprite_frames = SubResource("SpriteFrames_by2id")
-frame = 2
-frame_progress = 0.759146
 
 [node name="удалить, прыжок" type="AnimatedSprite2D" parent="."]
 position = Vector2(376, 1405)
 sprite_frames = SubResource("SpriteFrames_upmco")
-frame = 10
-frame_progress = 0.899438
 
 [node name="удалить, айдл" type="AnimatedSprite2D" parent="."]
 position = Vector2(464, 1417)
 sprite_frames = SubResource("SpriteFrames_r6nce")
-frame = 3
-frame_progress = 0.123083
 
 [node name="удалить, стрельба" type="AnimatedSprite2D" parent="."]
-position = Vector2(600, 1422)
+position = Vector2(582, 1450)
 sprite_frames = SubResource("SpriteFrames_3qeaf")
-frame_progress = 0.493949
+frame = 7
+frame_progress = 0.888031
