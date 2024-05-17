@@ -1,6 +1,6 @@
 [gd_scene load_steps=92 format=3 uid="uid://duxmyrqemebwk"]
 
-[ext_resource type="PackedScene" uid="uid://cm41bfn363ehv" path="res://Scenes/player.tscn" id="1_gc5se"]
+[ext_resource type="PackedScene" uid="uid://cm41bfn363ehv" path="res://Characters/character.tscn" id="1_gc5se"]
 [ext_resource type="Texture2D" uid="uid://dacsvn2mh12mn" path="res://Assets/Environment/Dungeon Prison/Assets/Tiles.png" id="2_e5c60"]
 [ext_resource type="Texture2D" uid="uid://cbiwnk3nsoj65" path="res://Assets/Character/Character RunNew.png" id="3_h60yx"]
 [ext_resource type="Texture2D" uid="uid://df3ton15nfd66" path="res://Assets/Weapons/GunNew.png" id="4_sjw4a"]
