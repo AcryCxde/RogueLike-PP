@@ -4,6 +4,21 @@
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="2_ldwau"]
 [ext_resource type="Script" path="res://Characters/Player/FinitуStateMachine.gd" id="3_xglet"]
 
+[sub_resource type="Animation" id="Animation_fnmo6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_ijicr"]
 resource_name = "idle"
 length = 1.05883
@@ -32,21 +47,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
-}
-
-[sub_resource type="Animation" id="Animation_fnmo6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_d36jw"]
@@ -91,6 +91,9 @@ script = ExtResource("2_ldwau")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 frame = 1
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(5, -61)
 
 [node name="AnimationPlayer" parent="." index="3"]
 libraries = {

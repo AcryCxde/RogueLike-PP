@@ -4,7 +4,7 @@
 extends CharacterBody2D
 class_name Character
 
-const FRICTION: float = 0.2
+const FRICTION: float = 0.4
 
 @export var max_speed: int = 350
 @export var acceleration: int = 150
