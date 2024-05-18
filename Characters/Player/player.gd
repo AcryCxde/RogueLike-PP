@@ -1,6 +1,7 @@
 extends Character
 
-@onready var weapon: Node2D = get_node("Weapon/WeaponSprite")
+@onready var weapon: Node2D = get_node("Weapon/WeaponSprite2D")
+
 
 func _process(_delta) -> void:
 	var mouse_direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
@@ -13,6 +14,8 @@ func _process(_delta) -> void:
 		weapon.flip_v = true
 	
 	weapon.rotation = mouse_direction.angle()
+
+
 
 func get_input() -> void:
 	move_direction = Vector2.ZERO
