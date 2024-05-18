@@ -13651,49 +13651,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_p3tnd")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ph1c7"]
-atlas = ExtResource("4_sjw4a")
-region = Rect2(0, 0, 122, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rij67"]
-atlas = ExtResource("4_sjw4a")
-region = Rect2(122, 0, 122, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7v73"]
-atlas = ExtResource("4_sjw4a")
-region = Rect2(244, 0, 122, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cykl1"]
-atlas = ExtResource("4_sjw4a")
-region = Rect2(366, 0, 122, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2y5dk"]
-atlas = ExtResource("4_sjw4a")
-region = Rect2(488, 0, 122, 60)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_e4axy"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ph1c7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rij67")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d7v73")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cykl1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2y5dk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 12.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_fekda"]
 atlas = ExtResource("3_h60yx")
 region = Rect2(0, 0, 140, 140)
@@ -14150,7 +14107,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 12.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dth8g"]
@@ -14224,6 +14181,49 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph1c7"]
+atlas = ExtResource("4_sjw4a")
+region = Rect2(0, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rij67"]
+atlas = ExtResource("4_sjw4a")
+region = Rect2(122, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7v73"]
+atlas = ExtResource("4_sjw4a")
+region = Rect2(244, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cykl1"]
+atlas = ExtResource("4_sjw4a")
+region = Rect2(366, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y5dk"]
+atlas = ExtResource("4_sjw4a")
+region = Rect2(488, 0, 122, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e4axy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph1c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rij67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7v73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cykl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y5dk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -14237,15 +14237,11 @@ position = Vector2(151, 353)
 collision_layer = 2
 collision_mask = 1
 
-[node name="удалить, пушка" type="AnimatedSprite2D" parent="."]
-position = Vector2(822, 1470)
-sprite_frames = SubResource("SpriteFrames_e4axy")
-frame_progress = 0.966634
-
 [node name="удалить, Бег" type="AnimatedSprite2D" parent="."]
 position = Vector2(110, 1425)
 sprite_frames = SubResource("SpriteFrames_uej30")
-frame_progress = 0.810457
+frame = 10
+frame_progress = 0.144223
 
 [node name="удалить, хит" type="AnimatedSprite2D" parent="."]
 position = Vector2(209, 1410)
@@ -14258,9 +14254,15 @@ sprite_frames = SubResource("SpriteFrames_upmco")
 [node name="удалить, айдл" type="AnimatedSprite2D" parent="."]
 position = Vector2(464, 1417)
 sprite_frames = SubResource("SpriteFrames_r6nce")
+frame = 7
+frame_progress = 0.104354
 
 [node name="удалить, стрельба" type="AnimatedSprite2D" parent="."]
 position = Vector2(582, 1450)
 sprite_frames = SubResource("SpriteFrames_3qeaf")
 frame = 7
 frame_progress = 0.888031
+
+[node name="удалить, пушка" type="AnimatedSprite2D" parent="."]
+position = Vector2(740, 1462)
+sprite_frames = SubResource("SpriteFrames_e4axy")
