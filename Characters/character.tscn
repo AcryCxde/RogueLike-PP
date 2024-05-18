@@ -1,8 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://cm41bfn363ehv"]
+[gd_scene load_steps=42 format=3 uid="uid://cm41bfn363ehv"]
 
 [ext_resource type="Script" path="res://Characters/character.gd" id="1_f6fex"]
 [ext_resource type="Texture2D" uid="uid://bh8tqxpo57g0t" path="res://Assets/Character/Character idle.png" id="2_k6lhl"]
 [ext_resource type="Texture2D" uid="uid://cbiwnk3nsoj65" path="res://Assets/Character/Character RunNew.png" id="3_eplmr"]
+[ext_resource type="Script" path="res://Characters/FSM.gd" id="4_h2byr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6obj"]
 atlas = ExtResource("2_k6lhl")
@@ -265,7 +266,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_siohm"]
 size = Vector2(53, 122)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Character" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_f6fex")
 
@@ -282,3 +283,8 @@ shape = SubResource("RectangleShape2D_siohm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="FinitуStateMachine" type="Node" parent="."]
+script = ExtResource("4_h2byr")

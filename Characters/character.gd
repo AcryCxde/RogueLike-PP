@@ -1,18 +1,25 @@
 # иконка персонажа в меню сцены
 @icon("res://Assets/Character/Character.png")
-class_name Character
+
 extends CharacterBody2D
+class_name Character
 
-@export var speed = 350
-@export var friction: float = 0.5
+const FRICTION: float = 0.2
 
-# гравитация, можно изменить в настройках проекта: Physics/2D
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@export var max_speed: int = 350
+@export var acceleration: int = 150
 
-func _physics_process(delta) -> void:
-	move()
+@onready var animated_sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
+
+var move_direction: Vector2 = Vector2.ZERO
+
+
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
+	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
+
 
 func move() -> void:
-	var move_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = move_direction * speed
+	move_direction = move_direction.normalized()
+	velocity += move_direction * acceleration
+	velocity = velocity.limit_length(max_speed)
