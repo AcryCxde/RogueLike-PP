@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bvqfq2ym6fnd6"]
+[gd_scene load_steps=19 format=3 uid="uid://bvqfq2ym6fnd6"]
 
 [ext_resource type="PackedScene" uid="uid://cm41bfn363ehv" path="res://Characters/character.tscn" id="1_bjtao"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="2_ldwau"]
-[ext_resource type="Script" path="res://Characters/Player/FinitуStateMachine.gd" id="3_xglet"]
+[ext_resource type="Script" path="res://Characters/Player/FiniteStateMachine.gd" id="3_wm04n"]
 [ext_resource type="Texture2D" uid="uid://df3ton15nfd66" path="res://Assets/Weapons/GunNew.png" id="4_ouj5u"]
 [ext_resource type="Texture2D" uid="uid://3gkkinulvtfp" path="res://Assets/Weapons/Gun.png" id="5_f6t5o"]
 
@@ -23,9 +23,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ijicr"]
 resource_name = "idle"
-length = 1.05883
+length = 1.8
 loop_mode = 1
-step = 0.0588235
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -45,7 +44,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0588235, 0.117647, 0.176471, 0.235294, 0.294118, 0.352941, 0.411765, 0.470588, 0.529412, 0.588235, 0.647059, 0.705882, 0.764706, 0.823529, 0.882353, 0.941176, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
@@ -53,9 +52,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_d36jw"]
 resource_name = "run"
-length = 1.06251
+length = 1.3
 loop_mode = 1
-step = 0.0625
+step = 0.08
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -75,7 +74,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375, 0.5, 0.5625, 0.625, 0.6875, 0.75, 0.8125, 0.875, 0.9375, 1),
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.48, 0.56, 0.64, 0.72, 0.8, 0.88, 0.96, 1.04, 1.12, 1.2, 1.28),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
@@ -139,12 +138,40 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_rvgvn"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_530jt"]
+resource_name = "weapone_move"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-32, 0), Vector2(-32, -2.5), Vector2(-32, -5), Vector2(-32, -7.5), Vector2(-32, -5), Vector2(-32, -2.5), Vector2(-32, -4.76837e-07)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mmgsb"]
+_data = {
+"RESET": SubResource("Animation_rvgvn"),
+"weapone_move": SubResource("Animation_530jt")
+}
+
 [node name="Player" instance=ExtResource("1_bjtao")]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("2_ldwau")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+animation = &"run"
 frame = 1
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -155,17 +182,22 @@ libraries = {
 "": SubResource("AnimationLibrary_xogye")
 }
 
-[node name="FinitуStateMachine" parent="." index="4"]
-script = ExtResource("3_xglet")
+[node name="FiniteStateMachine" parent="." index="4"]
+script = ExtResource("3_wm04n")
 
 [node name="Weapon" type="Node2D" parent="." index="5"]
-position = Vector2(32, -56)
+position = Vector2(26, -52)
 
 [node name="WeaponSprite" type="AnimatedSprite2D" parent="Weapon" index="0"]
-position = Vector2(-32, -4.76837e-07)
+position = Vector2(-27, 3)
 scale = Vector2(0.786283, 0.783073)
 sprite_frames = SubResource("SpriteFrames_mgu5s")
-animation = &"idle"
+animation = &"fire"
 autoplay = "idle"
-frame_progress = 0.904839
-offset = Vector2(31.7952, 0)
+offset = Vector2(24.1644, -3.83106)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Weapon" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_mmgsb")
+}
+autoplay = "weapone_move"

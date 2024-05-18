@@ -286,5 +286,5 @@ position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="FinitуStateMachine" type="Node" parent="."]
+[node name="FiniteStateMachine" type="Node" parent="."]
 script = ExtResource("4_h2byr")
