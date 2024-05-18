@@ -16,10 +16,10 @@ func _state_logic(_delta: float) -> void:
 func _get_transition() -> int:
 	match state:
 		states.idle:
-			if parent.velocity.length() > 10:
+			if parent.velocity.length() > 5:
 				return states.run
 		states.run:
-			if parent.velocity.length() < 10:
+			if parent.velocity.length() < 5:
 				return states.idle
 	return -1
 

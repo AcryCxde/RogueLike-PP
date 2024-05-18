@@ -1,6 +1,7 @@
 extends Character
 
 @onready var weapon: Node2D = get_node("Weapon/WeaponSprite2D")
+@onready var weapon_animation: AnimationPlayer = get_node("Weapon/WeaponAnimationPlayer")
 
 
 func _process(_delta) -> void:
@@ -14,7 +15,9 @@ func _process(_delta) -> void:
 		weapon.flip_v = true
 	
 	weapon.rotation = mouse_direction.angle()
-
+	
+	if Input.is_action_pressed("ui_attack"):
+		weapon_animation.play("weapon_attack")
 
 
 func get_input() -> void:

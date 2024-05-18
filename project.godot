@@ -26,7 +26,6 @@ window/stretch/scale=0.8
 [editor]
 
 movie_writer/movie_file="D:/My Projects/Github/RogueLike-PP/Movie Writer/Test.avi"
-movie_writer/disable_vsync=true
 movie_writer/fps=144
 
 [input]
