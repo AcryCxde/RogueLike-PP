@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvqfq2ym6fnd6"]
+[gd_scene load_steps=16 format=3 uid="uid://bvqfq2ym6fnd6"]
 
 [ext_resource type="PackedScene" uid="uid://cm41bfn363ehv" path="res://Characters/character.tscn" id="1_bjtao"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="2_ldwau"]
 [ext_resource type="Script" path="res://Characters/Player/FinitуStateMachine.gd" id="3_xglet"]
+[ext_resource type="Texture2D" uid="uid://df3ton15nfd66" path="res://Assets/Weapons/GunNew.png" id="4_ouj5u"]
+[ext_resource type="Texture2D" uid="uid://3gkkinulvtfp" path="res://Assets/Weapons/Gun.png" id="5_f6t5o"]
 
 [sub_resource type="Animation" id="Animation_fnmo6"]
 length = 0.001
@@ -86,7 +88,60 @@ _data = {
 "run": SubResource("Animation_d36jw")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4dpy"]
+atlas = ExtResource("4_ouj5u")
+region = Rect2(0, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5enve"]
+atlas = ExtResource("4_ouj5u")
+region = Rect2(122, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpt6q"]
+atlas = ExtResource("4_ouj5u")
+region = Rect2(244, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gquc1"]
+atlas = ExtResource("4_ouj5u")
+region = Rect2(366, 0, 122, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5vl8"]
+atlas = ExtResource("4_ouj5u")
+region = Rect2(488, 0, 122, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgu5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4dpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5enve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpt6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gquc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5vl8")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_f6t5o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="Player" instance=ExtResource("1_bjtao")]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("2_ldwau")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
@@ -102,3 +157,15 @@ libraries = {
 
 [node name="FinitуStateMachine" parent="." index="4"]
 script = ExtResource("3_xglet")
+
+[node name="Weapon" type="Node2D" parent="." index="5"]
+position = Vector2(32, -56)
+
+[node name="WeaponSprite" type="AnimatedSprite2D" parent="Weapon" index="0"]
+position = Vector2(-32, -4.76837e-07)
+scale = Vector2(0.786283, 0.783073)
+sprite_frames = SubResource("SpriteFrames_mgu5s")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.904839
+offset = Vector2(31.7952, 0)
