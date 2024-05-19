@@ -212,7 +212,6 @@ collision_mask = 5
 script = ExtResource("2_ldwau")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-animation = &"run"
 frame = 1
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -222,13 +221,13 @@ position = Vector2(5, -61)
 libraries = {
 "": SubResource("AnimationLibrary_xogye")
 }
+autoplay = "idle"
 
 [node name="FiniteStateMachine" parent="." index="3"]
 script = ExtResource("3_wm04n")
 
 [node name="Camera2D" type="Camera2D" parent="." index="4"]
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 
 [node name="Weapon" type="Node2D" parent="." index="5"]
 position = Vector2(32, -48)

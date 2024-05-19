@@ -4,6 +4,14 @@
 [ext_resource type="Script" path="res://Characters/Enemies/enemy.gd" id="2_eqhja"]
 
 [node name="Enemy" instance=ExtResource("1_io2s6")]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("2_eqhja")
 
 [node name="PathTimer" type="Timer" parent="." index="4"]
+wait_time = 0.5
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="5"]
+
+[connection signal="timeout" from="PathTimer" to="." method="_on_path_timer_timeout"]

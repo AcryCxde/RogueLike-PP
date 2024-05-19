@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://duxmyrqemebwk"]
+[gd_scene load_steps=3 format=3 uid="uid://duxmyrqemebwk"]
 
 [ext_resource type="PackedScene" uid="uid://bvqfq2ym6fnd6" path="res://Characters/Player/player.tscn" id="1_8cvv5"]
+[ext_resource type="PackedScene" uid="uid://1wuasu6edkvd" path="res://Characters/Enemies/skeleton_base.tscn" id="2_vlmgc"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_8cvv5")]
+
+[node name="SkeletonBase" parent="." instance=ExtResource("2_vlmgc")]
+position = Vector2(703, -3)
+max_speed = 250
+acceleration = 80
