@@ -5,29 +5,29 @@
 [ext_resource type="Texture2D" uid="uid://cygp372srj1ru" path="res://Assets/Enemy/Skeleton Crew/Skeleton - Base/Run/Run-Sheet.png" id="2_jvcd7"]
 [ext_resource type="Script" path="res://Characters/Enemies/SkeletonFSM.gd" id="4_e6ujk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_71xan"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v08v3"]
 atlas = ExtResource("2_jvcd7")
-region = Rect2(0, 0, 64, 64)
+region = Rect2(0, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlicu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f6t5"]
 atlas = ExtResource("2_jvcd7")
-region = Rect2(64, 0, 64, 64)
+region = Rect2(256, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wpvlx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbqch"]
 atlas = ExtResource("2_jvcd7")
-region = Rect2(128, 0, 64, 64)
+region = Rect2(512, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bcwh0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yco2a"]
 atlas = ExtResource("2_jvcd7")
-region = Rect2(192, 0, 64, 64)
+region = Rect2(768, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdu3v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_75jcx"]
 atlas = ExtResource("2_jvcd7")
-region = Rect2(256, 0, 64, 64)
+region = Rect2(1024, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gwx54"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4uyp"]
 atlas = ExtResource("2_jvcd7")
-region = Rect2(320, 0, 64, 64)
+region = Rect2(1280, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkmv6"]
 atlas = ExtResource("2_5e06x")
@@ -49,26 +49,26 @@ region = Rect2(384, 0, 128, 128)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_71xan")
+"texture": SubResource("AtlasTexture_v08v3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nlicu")
+"texture": SubResource("AtlasTexture_1f6t5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wpvlx")
+"texture": SubResource("AtlasTexture_bbqch")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bcwh0")
+"texture": SubResource("AtlasTexture_yco2a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gdu3v")
+"texture": SubResource("AtlasTexture_75jcx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gwx54")
+"texture": SubResource("AtlasTexture_t4uyp")
 }],
 "loop": true,
 "name": &"chase",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -133,10 +133,9 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_o1p8o"]
+[sub_resource type="Animation" id="Animation_uo0ia"]
 resource_name = "chase"
 length = 0.55
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -165,13 +164,16 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_khdvn"]
 _data = {
 "RESET": SubResource("Animation_1ae1r"),
-"chase": SubResource("Animation_o1p8o"),
+"chase": SubResource("Animation_uo0ia"),
 "idle": SubResource("Animation_ilhj8")
 }
 
 [node name="SkeletonBase" instance=ExtResource("1_k6qlr")]
+max_speed = 350
+acceleration = 150
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(-1, -129)
 sprite_frames = SubResource("SpriteFrames_5n31u")
 animation = &"chase"
 frame = 1
@@ -187,6 +189,3 @@ autoplay = "idle"
 
 [node name="FiniteStateMachine" parent="." index="3"]
 script = ExtResource("4_e6ujk")
-
-[node name="NavigationAgent2D" parent="." index="5"]
-path_max_distance = 1000.0
