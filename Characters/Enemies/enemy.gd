@@ -1,3 +1,5 @@
+@icon("res://Assets/Enemy/Skeleton Crew/Skeleton - Base/Icon Sceleton - Base.png")
+
 extends Character
 class_name Enemy
 
@@ -6,6 +8,8 @@ class_name Enemy
 @onready var path_timer: Timer = get_node("PathTimer")
 @onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
 
+func _ready() -> void:
+	var __ = connect("tree_exited", Callable(get_parent(), "_on_enemy_killed"))
 
 func chase() -> void:
 	if not navigation_agent.is_target_reached():

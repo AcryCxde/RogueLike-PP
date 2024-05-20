@@ -18,6 +18,8 @@ func _process(_delta) -> void:
 	
 	if Input.is_action_pressed("ui_attack"):
 		weapon_animation.play("weapon_attack")
+	else:
+		weapon_animation.play("weapon_idle")
 
 
 func get_input() -> void:
