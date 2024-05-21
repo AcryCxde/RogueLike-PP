@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://231n60qaphob"]
+
+[ext_resource type="PackedScene" uid="uid://bkgswvropqki2" path="res://NewRooms/spawn_room.tscn" id="1_dql5g"]
+[ext_resource type="PackedScene" uid="uid://vhlibh0wijs8" path="res://NewRooms/corridor_vertical.tscn" id="2_3xvql"]
+[ext_resource type="PackedScene" uid="uid://dmt1m7oalusys" path="res://NewRooms/main_room.tscn" id="3_yuiwm"]
+[ext_resource type="PackedScene" uid="uid://crk0gaw2hvupe" path="res://NewRooms/corridor_horizontal.tscn" id="4_sifm3"]
+[ext_resource type="PackedScene" uid="uid://xue4xnftli1r" path="res://NewRooms/room2_hor.tscn" id="5_qkhdj"]
+[ext_resource type="PackedScene" uid="uid://dpn85xsomv3yq" path="res://NewRooms/room3_hor.tscn" id="6_degkw"]
+[ext_resource type="PackedScene" uid="uid://c7axqabg2agoe" path="res://NewRooms/room2.tscn" id="7_jb27n"]
+[ext_resource type="PackedScene" uid="uid://csn5jnpbne1rf" path="res://NewRooms/room1.tscn" id="8_m5ew1"]
+[ext_resource type="PackedScene" uid="uid://c1wif8ytati12" path="res://NewRooms/end_room.tscn" id="9_xtpbw"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="SpawnRoom" parent="." instance=ExtResource("1_dql5g")]
+position = Vector2(-3, -12)
+
+[node name="CorridorVer1" parent="." instance=ExtResource("2_3xvql")]
+position = Vector2(-2, -1097)
+
+[node name="MainRoom" parent="." instance=ExtResource("3_yuiwm")]
+position = Vector2(-2, -2185)
+
+[node name="CorridorHor1" parent="." instance=ExtResource("4_sifm3")]
+position = Vector2(1918, -2313)
+
+[node name="Room2Hor" parent="." instance=ExtResource("5_qkhdj")]
+position = Vector2(3456, -2503)
+
+[node name="CorridorHor2" parent="." instance=ExtResource("4_sifm3")]
+position = Vector2(-1916, -2121)
+
+[node name="Room3Hor" parent="." instance=ExtResource("6_degkw")]
+position = Vector2(-3836, -2225)
+
+[node name="CorridorVer2" parent="." instance=ExtResource("2_3xvql")]
+position = Vector2(-2, -3273)
+
+[node name="Room2" parent="." instance=ExtResource("7_jb27n")]
+position = Vector2(-2, -4360)
+
+[node name="CorridorVer3" parent="." instance=ExtResource("2_3xvql")]
+position = Vector2(-5, -5448)
+
+[node name="Room1" parent="." instance=ExtResource("8_m5ew1")]
+position = Vector2(251, -6536)
+
+[node name="CorridorVer4" parent="." instance=ExtResource("2_3xvql")]
+position = Vector2(251, -7624)
+
+[node name="EndRoom" parent="." instance=ExtResource("9_xtpbw")]
+position = Vector2(251, -8712)
