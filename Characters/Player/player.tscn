@@ -208,7 +208,7 @@ _data = {
 
 [node name="Player" instance=ExtResource("1_bjtao")]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("2_ldwau")
 
 [node name="AnimatedSprite2D" parent="." index="0"]

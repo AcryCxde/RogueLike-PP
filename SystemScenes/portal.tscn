@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dspeyvdmy6dp2"]
+
+[ext_resource type="Script" path="res://SystemScenes/portal.gd" id="1_nk18p"]
+
+[node name="portal" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_nk18p")
+
+[connection signal="body_entered" from="." to="." method="_on_player_entered"]
+[connection signal="body_exited" from="." to="." method="_on_player_exited"]
