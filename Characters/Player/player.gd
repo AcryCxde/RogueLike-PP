@@ -2,7 +2,7 @@ extends Character
 
 @onready var weapon: Node2D = get_node("Weapon/WeaponSprite2D")
 @onready var weapon_animation: AnimationPlayer = get_node("Weapon/WeaponAnimationPlayer")
-
+var bullet = preload("res://Scenes/bullet.tscn")
 
 func _process(_delta) -> void:
 	var mouse_direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
@@ -16,10 +16,17 @@ func _process(_delta) -> void:
 	
 	weapon.rotation = mouse_direction.angle()
 	
-	if Input.is_action_pressed("ui_attack"):
+	if Input.is_action_just_pressed("ui_attack"):
 		weapon_animation.play("weapon_attack")
+		shoot()
 	else:
 		weapon_animation.play("weapon_idle")
+
+
+func shoot():
+	var b = bullet.instantiate()
+	owner.add_child(b)
+	b.transform = $Weapon/WeaponSprite2D/Marker2D.global_transform
 
 
 func get_input() -> void:

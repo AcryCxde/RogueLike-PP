@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://boc6v8l5rr7q4"]
+
+[ext_resource type="Script" path="res://Scenes/bullet.gd" id="1_fxven"]
+[ext_resource type="Texture2D" uid="uid://b6ha1rr43m33q" path="res://Assets/Weapons/Bullet.png" id="2_8bhu2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wcop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8bhu2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jl3ws"]
+size = Vector2(24, 10)
+
+[node name="Bullet" type="Area2D"]
+position = Vector2(0, -3)
+script = ExtResource("1_fxven")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1wcop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jl3ws")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

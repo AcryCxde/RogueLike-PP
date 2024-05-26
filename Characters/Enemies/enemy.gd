@@ -3,31 +3,29 @@
 extends Character
 class_name Enemy
 
-@onready var player: Node2D = get_node("../Player")
+@onready var player: CharacterBody2D = get_tree().current_scene.get_node("Player")
 @onready var path_timer: Timer = get_node("PathTimer")
 @onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
 
 
 func chase() -> void:
-	var move_direction = to_local(navigation_agent.get_next_path_position()).normalized()
-	velocity = move_direction * acceleration
-	move_and_slide()
-	
-	if move_direction.x > 0 and animated_sprite.flip_h:
-		animated_sprite.flip_h = false
-	elif move_direction.x < 0 and not animated_sprite.flip_h:
-		animated_sprite.flip_h = true
-	if navigation_agent.is_target_reached():
-		create_path()
+	if not navigation_agent.is_target_reached():
+		var vector_to_next_point: Vector2 = navigation_agent.get_next_path_position() - global_position
+		move_direction = vector_to_next_point
+
+		if vector_to_next_point.x > 0 and animated_sprite.flip_h:
+			animated_sprite.flip_h = false
+		elif vector_to_next_point.x < 0 and not animated_sprite.flip_h:
+			animated_sprite.flip_h = true
 
 
-func create_path() -> void:
-	navigation_agent.target_position = player.global_position
-	navigation_agent.set_target_location(player.global_position)
+func _on_PathTimer_timeout() -> void:
+	if is_instance_valid(player):
+		_get_path_to_player()
+	else:
+		path_timer.stop()
+		move_direction = Vector2.ZERO
 
 
-func _on_PathTimer_timeout():
-	create_path()
-
-func _ready() -> void:
-	path_timer.start()
+func _get_path_to_player() -> void:
+	navigation_agent.target_position = player.position

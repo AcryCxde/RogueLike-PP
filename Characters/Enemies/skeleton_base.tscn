@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://1wuasu6edkvd"]
+[gd_scene load_steps=21 format=3 uid="uid://1wuasu6edkvd"]
 
 [ext_resource type="PackedScene" uid="uid://dhmdfpx0mfcrs" path="res://Characters/Enemies/enemy.tscn" id="1_k6qlr"]
+[ext_resource type="Script" path="res://Characters/Enemies/skeleton_base.gd" id="2_4j2r8"]
 [ext_resource type="Texture2D" uid="uid://tpphjm4gq8cp" path="res://Assets/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png" id="2_5e06x"]
 [ext_resource type="Texture2D" uid="uid://cygp372srj1ru" path="res://Assets/Enemy/Skeleton Crew/Skeleton - Base/Run/Run-Sheet.png" id="2_jvcd7"]
 [ext_resource type="Script" path="res://Characters/Enemies/SkeletonFSM.gd" id="4_e6ujk"]
@@ -172,6 +173,7 @@ _data = {
 collision_mask = 5
 motion_mode = 1
 wall_min_slide_angle = 0.0
+script = ExtResource("2_4j2r8")
 max_speed = 350
 acceleration = 150
 
