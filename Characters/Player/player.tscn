@@ -208,7 +208,7 @@ _data = {
 
 [node name="Player" instance=ExtResource("1_bjtao")]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 13
 script = ExtResource("2_ldwau")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
@@ -227,7 +227,10 @@ autoplay = "idle"
 [node name="FiniteStateMachine" parent="." index="3"]
 script = ExtResource("3_wm04n")
 
-[node name="Weapon" type="Node2D" parent="." index="4"]
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+position_smoothing_enabled = true
+
+[node name="Weapon" type="Node2D" parent="." index="5"]
 position = Vector2(32, -48)
 
 [node name="WeaponSprite2D" type="AnimatedSprite2D" parent="Weapon" index="0"]
