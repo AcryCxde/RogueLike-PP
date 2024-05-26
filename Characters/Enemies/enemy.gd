@@ -15,6 +15,8 @@ func chase() -> void:
 	if not navigation_agent.is_target_reached():
 		var vector_to_next_point: Vector2 = navigation_agent.get_next_path_position() - global_position
 		move_direction = vector_to_next_point
+		print(navigation_agent.get_next_path_position())
+		
 
 		if vector_to_next_point.x > 0 and animated_sprite.flip_h:
 			animated_sprite.flip_h = false

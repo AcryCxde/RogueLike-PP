@@ -189,3 +189,7 @@ autoplay = "idle"
 
 [node name="FiniteStateMachine" parent="." index="3"]
 script = ExtResource("4_e6ujk")
+
+[node name="NavigationAgent2D" parent="." index="5"]
+path_max_distance = 10.0
+debug_enabled = true
