@@ -1,6 +1,6 @@
 extends Area2D
 
-var allMaps = [preload("res://Levels/Level1.tscn"), preload("res://Levels/Level2.tscn")]
+var allMaps = [preload("res://Levels/lvl_1.tscn"), preload("res://Levels/lvl_2.tscn")]
 var entered = false
 
 func _on_player_entered(_body: PhysicsBody2D):

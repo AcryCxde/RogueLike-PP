@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://kifwh4a23yry"]
+[gd_scene load_steps=14 format=3 uid="uid://f6qmfpfkcts1"]
 
 [ext_resource type="PackedScene" uid="uid://bkgswvropqki2" path="res://RoomsLevel1/spawn_room.tscn" id="1_dql5g"]
 [ext_resource type="PackedScene" uid="uid://vhlibh0wijs8" path="res://RoomsLevel1/corridor_vertical.tscn" id="2_3xvql"]
@@ -13,10 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://c0hnusanteinp" path="res://RoomsLevel1/huge_room.tscn" id="10_d5rgb"]
 [ext_resource type="PackedScene" uid="uid://cfppjolm27ico" path="res://RoomsLevel1/room2_hor_2ways.tscn" id="11_w5kve"]
 [ext_resource type="PackedScene" uid="uid://bwey2w3rxi68s" path="res://RoomsLevel1/corridor_vertical_short_corner.tscn" id="12_upxun"]
-[ext_resource type="PackedScene" uid="uid://dspeyvdmy6dp2" path="res://SystemScenes/portal.tscn" id="14_658p2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wkle"]
-size = Vector2(132.5, 52)
 
 [node name="Level1" type="Node2D"]
 position = Vector2(-3, 0)
@@ -71,10 +67,3 @@ position = Vector2(3454, -3465)
 
 [node name="Room2End" parent="." instance=ExtResource("5_qkhdj")]
 position = Vector2(4608, -3783)
-
-[node name="portal" parent="." instance=ExtResource("14_658p2")]
-position = Vector2(1154, -8645)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
-position = Vector2(59.75, -41)
-shape = SubResource("RectangleShape2D_5wkle")

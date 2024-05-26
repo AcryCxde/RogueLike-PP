@@ -1,6 +1,6 @@
 extends Button
 
-var allMaps = [preload("res://Levels/Level1.tscn"), preload("res://Levels/Level2.tscn")]
+var allMaps = [preload("res://Levels/lvl_1.tscn"), preload("res://Levels/lvl_2.tscn")]
 var randMap = allMaps.pick_random()
 
 func _on_pressed():
