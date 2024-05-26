@@ -169,6 +169,9 @@ _data = {
 }
 
 [node name="SkeletonBase" instance=ExtResource("1_k6qlr")]
+collision_mask = 5
+motion_mode = 1
+wall_min_slide_angle = 0.0
 max_speed = 350
 acceleration = 150
 
@@ -189,3 +192,6 @@ autoplay = "idle"
 
 [node name="FiniteStateMachine" parent="." index="3"]
 script = ExtResource("4_e6ujk")
+
+[node name="NavigationAgent2D" parent="." index="5"]
+navigation_layers = 7
