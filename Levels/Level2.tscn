@@ -1,0 +1,99 @@
+[gd_scene load_steps=16 format=3 uid="uid://dx4dbp83rw866"]
+
+[ext_resource type="PackedScene" uid="uid://dnuu38vyyqdw5" path="res://RoomsLevel2/spawn_room.tscn" id="1_iscp1"]
+[ext_resource type="PackedScene" uid="uid://c4x5ljw1u7rp6" path="res://RoomsLevel2/corridor_vertical.tscn" id="2_kje41"]
+[ext_resource type="PackedScene" uid="uid://dkk8m5abrko6r" path="res://RoomsLevel2/corridor_vertical_short.tscn" id="3_uu3mo"]
+[ext_resource type="PackedScene" uid="uid://dbxm15cyy886s" path="res://RoomsLevel2/corridor_vertical_short_corner.tscn" id="4_afxio"]
+[ext_resource type="PackedScene" uid="uid://yks2k3ps37vb" path="res://RoomsLevel2/corridor_horizontal.tscn" id="5_fbiin"]
+[ext_resource type="PackedScene" uid="uid://cvm2vbt4kdck2" path="res://RoomsLevel2/room1.tscn" id="6_5dv5p"]
+[ext_resource type="PackedScene" uid="uid://c8s5x0jp6cgy3" path="res://RoomsLevel2/room2_hor_2ways.tscn" id="7_mteha"]
+[ext_resource type="PackedScene" uid="uid://4y7kktgqpq0q" path="res://RoomsLevel2/huge_room.tscn" id="8_vic5d"]
+[ext_resource type="PackedScene" uid="uid://ckgmdmp0hfg2e" path="res://RoomsLevel2/room2.tscn" id="9_qccod"]
+[ext_resource type="PackedScene" uid="uid://b8s7rnri5tv20" path="res://RoomsLevel2/end_room.tscn" id="10_b0ao2"]
+[ext_resource type="PackedScene" uid="uid://chneo3e4hdqn5" path="res://RoomsLevel2/room3_hor.tscn" id="11_fkfv0"]
+[ext_resource type="PackedScene" uid="uid://svfubdol7fo0" path="res://RoomsLevel2/room3_hor_2ways.tscn" id="12_1sn86"]
+[ext_resource type="PackedScene" uid="uid://crnnfj6t2u6r7" path="res://RoomsLevel2/room2_hor.tscn" id="13_ma4a3"]
+[ext_resource type="PackedScene" uid="uid://dspeyvdmy6dp2" path="res://SystemScenes/portal.tscn" id="14_ehc6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlvk"]
+size = Vector2(136, 71)
+
+[node name="Level2" type="Node2D"]
+
+[node name="SpawnRoom" parent="." instance=ExtResource("1_iscp1")]
+position = Vector2(3, 4)
+
+[node name="Room" parent="." instance=ExtResource("2_kje41")]
+position = Vector2(-573, -1092)
+
+[node name="Room2" parent="." instance=ExtResource("3_uu3mo")]
+position = Vector2(643, 828)
+
+[node name="Room3" parent="." instance=ExtResource("4_afxio")]
+position = Vector2(-1533, 444)
+
+[node name="Room4" parent="." instance=ExtResource("5_fbiin")]
+position = Vector2(1923, -260)
+
+[node name="Room5" parent="." instance=ExtResource("6_5dv5p")]
+position = Vector2(-317, -2180)
+
+[node name="Room6" parent="." instance=ExtResource("4_afxio")]
+position = Vector2(-317, -3140)
+
+[node name="Room7" parent="." instance=ExtResource("7_mteha")]
+position = Vector2(835, -3460)
+
+[node name="HugeRoom" parent="." instance=ExtResource("8_vic5d")]
+position = Vector2(2755, -4164)
+rotation = -3.14159
+
+[node name="Room8" parent="." instance=ExtResource("9_qccod")]
+position = Vector2(643, 1660)
+
+[node name="Room9" parent="." instance=ExtResource("4_afxio")]
+position = Vector2(386, 2364)
+rotation = 3.14159
+
+[node name="Room10" parent="." instance=ExtResource("3_uu3mo")]
+position = Vector2(643, 2492)
+
+[node name="Room11" parent="." instance=ExtResource("4_afxio")]
+position = Vector2(1219, 4860)
+rotation = -1.5708
+
+[node name="Room12" parent="." instance=ExtResource("5_fbiin")]
+position = Vector2(2179, 3388)
+rotation = 6.28319
+
+[node name="Room13" parent="." instance=ExtResource("4_afxio")]
+position = Vector2(5635, 4284)
+rotation = -3.14159
+
+[node name="Room14" parent="." instance=ExtResource("10_b0ao2")]
+position = Vector2(3715, 2237)
+
+[node name="Room15" parent="." instance=ExtResource("11_fkfv0")]
+position = Vector2(-3070, 1367)
+
+[node name="Room16" parent="." instance=ExtResource("7_mteha")]
+position = Vector2(3459, -452)
+
+[node name="Room17" parent="." instance=ExtResource("3_uu3mo")]
+position = Vector2(3459, -1284)
+
+[node name="Room18" parent="." instance=ExtResource("12_1sn86")]
+position = Vector2(3459, -2028)
+
+[node name="Room19" parent="." instance=ExtResource("13_ma4a3")]
+position = Vector2(6917, -2114)
+
+[node name="Room20" parent="." instance=ExtResource("5_fbiin")]
+position = Vector2(5379, -1924)
+
+[node name="portal" parent="." instance=ExtResource("14_ehc6a")]
+position = Vector2(4607, 2290)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
+position = Vector2(67, -17.5)
+shape = SubResource("RectangleShape2D_gnlvk")
