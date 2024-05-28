@@ -13761,7 +13761,7 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 0, 65536, 196608, 5, 131072, 1966
 position = Vector2(641, 603)
 collision_mask = 1
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
