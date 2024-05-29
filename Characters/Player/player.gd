@@ -21,6 +21,7 @@ func _process(_delta) -> void:
 		shoot()
 	else:
 		weapon_animation.play("weapon_idle")
+		
 
 
 func shoot():
