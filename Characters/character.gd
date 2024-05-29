@@ -6,7 +6,6 @@ class_name Character
 
 const FRICTION: float = 0.4
 
-@export var max_hp: int = 2
 @export var hp: int = 2
 
 @export var max_speed: int = 350

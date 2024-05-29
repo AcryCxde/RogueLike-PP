@@ -1,6 +1,7 @@
 extends Character
 
 @onready var weapon: Node2D = get_node("Weapon/WeaponSprite2D")
+@onready var bullet_hitbox: Area2D = get_node("res://Scenes/bullet.tscn")
 @onready var weapon_animation: AnimationPlayer = get_node("Weapon/WeaponAnimationPlayer")
 var bullet = preload("res://Scenes/bullet.tscn")
 
@@ -23,7 +24,7 @@ func _process(_delta) -> void:
 		weapon_animation.play("weapon_idle")
 
 
-func shoot():
+func shoot() -> void:
 	var b = bullet.instantiate()
 	owner.add_child(b)
 	b.transform = $Weapon/WeaponSprite2D/Marker2D.global_transform
