@@ -1,9 +1,10 @@
 extends Character
 
 @onready var weapon: Node2D = get_node("Weapon/WeaponSprite2D")
-@onready var bullet_hitbox: Area2D = get_node("res://Scenes/bullet.tscn")
 @onready var weapon_animation: AnimationPlayer = get_node("Weapon/WeaponAnimationPlayer")
-var bullet = preload("res://Scenes/bullet.tscn")
+@onready var bullet = preload("res://Scenes/bullet.tscn")
+@onready var player_animation: AnimationPlayer = get_node("$AnimationPlayer")
+@onready var player_state_machine: Node = get_node("FiniteStateMachine")
 
 func _process(_delta) -> void:
 	var mouse_direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
@@ -14,6 +15,11 @@ func _process(_delta) -> void:
 	elif mouse_direction.x < 0 and not animated_sprite.flip_h:
 		animated_sprite.flip_h = true
 		weapon.flip_v = true
+	
+	if (mouse_direction.x < 0 and Input.is_action_pressed("ui_right")) or (mouse_direction.x > 0 and Input.is_action_pressed("ui_left")):
+		player_state_machine.set_state(player_state_machine.states.move_back)
+	elif (mouse_direction.x > 0 and Input.is_action_pressed("ui_right")) or (mouse_direction.x < 0 and Input.is_action_pressed("ui_left")):
+		player_state_machine.set_state(player_state_machine.states.move)
 	
 	weapon.rotation = mouse_direction.angle()
 	
